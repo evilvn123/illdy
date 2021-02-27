@@ -16,7 +16,7 @@ body{
     background-color: #fff;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     color: #8c9597;
 }
 ul{
@@ -717,6 +717,9 @@ a, a:hover{
     height: 200px;
     resize: none;
 }
+.required-mess{
+    color: #dc3232;
+}
 .ajax-load{
     background-image: url("../images/ajax-loader.gif");
     background-repeat: repeat-x;
@@ -726,7 +729,8 @@ a, a:hover{
 }
 .form .button{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 .form .button button{
     border-radius: 5px;
@@ -737,6 +741,13 @@ a, a:hover{
     color: #fff;
     font-size: 14px;
     font-weight: 700;
+}
+.form .button .message{
+    border: 2px solid var(--primary-color);
+    font-size: 14px;
+    padding: 5px;
+    margin: 0;
+    visibility: hidden;
 }
 .site-footer{
 

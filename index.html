@@ -483,11 +483,13 @@
             <div class="row">
               <div class="text col-md-4 col-12">
                 <label for="">Your Name(required)</label>
-                <input type="text">
+                <input id="name" type="text">
+                <p class="required-mess" id="nameMess"></p>
               </div>
               <div class="text col-md-4 col-12">
                 <label for="">Your Email(required)</label>
-                <input type="email">
+                <input id="email" type="email">
+                <p class="required-mess" id="emailMess"></p>
               </div>
               <div class="text col-md-4 col-12">
                 <label for="">Subject</label>
@@ -498,10 +500,11 @@
                 <textarea name="" id="" cols="30" rows="10"></textarea>
               </div>
               <div class="col-12">
-                <p class="ajax-load col-12"></p>
+                <p id="ajax-load" class="ajax-load col-12"></p>
               </div>
               <div class="button col-12">
-                <button>Send</button>
+                <p class="message" id="message">One or more fields have an error. Please check and try again.</p>
+                <button type="button" onclick="checkField()">Send</button>
               </div>
             </div>
           </form>
@@ -575,12 +578,48 @@
       dots: true,
     })
 
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('.counter').counterUp({
         delay: 10,
         time: 1000
       });
     });
+
+    function checkField() {
+      let check = 0;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const nameMess = document.getElementById('nameMess');
+      const emailMess = document.getElementById('emailMess');
+      const message = document.getElementById('message');
+      const ajaxLoad = document.getElementById('ajax-load');
+      ajaxLoad.style.visibility = "visible";
+      console.log(ajaxLoad.style.visibility);
+      setTimeout(() => {
+        if (name.value == "") {
+          nameMess.innerHTML = "The field is required."
+          name.style.border = "1px solid #dc3232";
+          check += 1;
+        } else {
+          nameMess.innerHTML = "";
+          name.style.border = "none"
+        }
+        if (email.value == "") {
+          emailMess.innerHTML = "The field is required."
+          email.style.border = "1px solid #dc3232";
+          check += 1;
+        } else {
+          emailMess.innerHTML = "";
+          email.style.border = "none"
+        }
+        if (check != 0) {
+          message.style.visibility = "visible";
+        } else {
+          message.style.visibility = "hidden";
+        }
+      }, 3000);
+      ajaxLoad.style.visibility = "hidden";
+    }
   </script>
 </body>
 
