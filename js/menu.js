@@ -1,13 +1,23 @@
 const body = document.body;
+let menuState = false;
 function showMenu() {
     const menu = document.getElementById("menu-responsive");
-    menu.classList.toggle('menu-responsive--display');
+    if(menuState){
+        menu.classList = 'menu-responsive menu-responsive--hide';
+        menuState = false;
+    }
+    else{
+        menu.classList = 'menu-responsive menu-responsive--display';
+        menuState = true;
+    }
+    
 }
 
 const responsiveMenu = () => {
     const menu = document.getElementById("menu-responsive");
     if (window.innerWidth >= 767) {
-       menu.classList.remove('menu-responsive--display');
+        menu.classList = 'menu-responsive menu-responsive--hide';
+        menuState = false;
     }
 }
 responsiveMenu();

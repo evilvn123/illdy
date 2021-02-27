@@ -80,31 +80,130 @@ a, a:hover{
     outline: none;
 }
 .menu-responsive{
-    display: block;
-    width: 0;
-    height: 0;
     text-align: center;
     background-color: #fff;
+    z-index: 10;
+    overflow: hidden;
+}
+.menu-responsive--hide{
     opacity: 0;
-    transform: scale(0,0);
-    transition: all 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    width: 0;
+    height: 0;
+    animation: hideMenu .5s ease-in-out;
 }
 .menu-responsive--display{
-    opacity: 1;
     width: 100%;
-    transform: scale(1,1);
     height: max-content;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: showMenu .5s ease-in-out;
 }
 .menu-responsive__item{
     padding: 15px;
     border-bottom: 1px solid #e4e4e4;
 }
+@keyframes showMenu{
+    0%{
+        width: 0;
+        height: 0;
+    }
+    10%{
+        width: 10%;
+        height: 40px;
+    }
+    20%{
+        width: 20%;
+        height: 80px;
+    }
+    30%{
+        width: 30%;
+        height: 120px;
+    }
+    40%{
+        width: 40%;
+        height: 160px;
+    }
+    50%{
+        width: 50%;
+        height: 200px;
+    }
+    60%{
+        width: 60%;
+        height: 240px;
+    }
+    70%{
+        width: 70%;
+        height: 280px;
+    }
+    80%{
+        width: 80%;
+        height: 320px;
+    }
+    90%{
+        width: 90%;
+        height: 400px;
+    }
+    100%{
+        width: 100%;
+        height: 400px;
+    }
+}
+@keyframes hideMenu{
+    0%{
+        width: 100%;
+        height: 400px;
+    }
+    10%{
+        width: 90%;
+        height: 400px;
+    }
+    20%{
+        width: 80%;
+        height: 320px;
+    }
+    30%{
+        width: 70%;
+        height: 280px;     
+    }
+    40%{
+        width: 60%;
+        height: 240px;    
+    }
+    50%{
+        width: 50%;
+        height: 200px;
+    }
+    60%{
+        width: 40%;
+        height: 160px;
+    }
+    70%{
+        width: 30%;
+        height: 120px;
+    }
+    80%{
+        width: 20%;
+        height: 80px;
+    }
+    90%{
+        width: 10%;
+        height: 40px;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+}
 .menu-responsive__item a{
     width: 100%;
     color: #000;
 }
-.menu-responsive__item:focus{
+.menu-responsive__item:hover{
     background-color: var(--secondary-color);
+}
+.menu-responsive__item:hover a{
     color: #fff;
 }
 .bot-header{
@@ -762,9 +861,6 @@ a, a:hover{
     padding: 5px;
     margin: 0;
     visibility: hidden;
-}
-.site-footer{
-
 }
 .site-footer .content{
     padding: 40px 0;
