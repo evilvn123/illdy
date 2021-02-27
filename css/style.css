@@ -369,7 +369,6 @@ a, a:hover{
     color: #fff;
     text-align: center;
     font-size: 14px; 
-    
 }
 .slide .item .item__speech::after{
     position: absolute;
@@ -391,6 +390,20 @@ a, a:hover{
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     color: #fff;
+}
+.owl-theme .owl-dots .owl-dot span{
+    background: #fff;
+    border: 1px solid #fff;
+}
+.owl-theme .owl-dots .active span{
+    background: transparent !important;
+}
+.owl-theme .owl-dots .owl-dot:focus{
+    outline: none;
+}
+.owl-theme .owl-dots .owl-dot:focus span{
+    outline: none;
+    background: var(--primary-color);
 }
 .services{
     padding-top: 70px;
@@ -811,6 +824,7 @@ a, a:hover{
     align-items: center;
     flex-direction: column;
     visibility: visible;
+    z-index: 999;
 }
 .preloader .counter, .preloader .unit{
     color: var(--primary-color);
