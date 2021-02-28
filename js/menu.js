@@ -10,7 +10,6 @@ function showMenu() {
         menu.classList = 'menu-responsive menu-responsive--display';
         menuState = true;
     }
-    
 }
 
 const responsiveMenu = () => {

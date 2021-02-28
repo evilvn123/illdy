@@ -90,7 +90,7 @@ a, a:hover{
     transition: opacity 1s ease-in-out;
     width: 0;
     height: 0;
-    animation: hideMenu .5s ease-in-out;
+    animation: hideMenu .3s ease-in-out;
 }
 .menu-responsive--display{
     width: 100%;
@@ -98,7 +98,7 @@ a, a:hover{
     opacity: 1;
     transition: opacity 1s ease-in-out;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    animation: showMenu .5s ease-in-out;
+    animation: showMenu .3s ease-in-out;
 }
 .menu-responsive__item{
     padding: 15px;
@@ -922,26 +922,32 @@ a, a:hover{
     visibility: visible;
     z-index: 999;
 }
-.preloader .counter, .preloader .unit{
+.preloader .percent{
+    width: 250px;
+    display: flex;
+    justify-content: flex-end;
+}
+.preloader .percent__counter, .preloader .percent__unit{
     color: var(--primary-color);
     margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
     line-height: 30px;
 }
 .preloader .bar{
     border-radius: 10px;
-    width: 15%;
-    padding: 5px 5px;
+    width: 250px;
+    height: 20px;
+    padding: 2px;
     background: transparent;
-    border: 3px solid var(--primary-color);
+    border: 3px solid #f1d204;
 }
 .preloader .bar .progress{
-    background: var(--primary-color);
+    background: #f1d204;
     animation: loader 1.5s ease normal;
-    padding: 5px;
     width: 100%;
+    height: 100%;
 }
 .loaded{
     visibility: hidden !important;
